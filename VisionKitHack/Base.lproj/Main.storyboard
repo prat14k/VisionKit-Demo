@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VisionKitHack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7v-84-EMs">
+                                <rect key="frame" x="149.5" y="318.5" width="76" height="30"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ukg-Bo-DYu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="u7v-84-EMs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JH5-7o-NgJ"/>
+                            <constraint firstItem="u7v-84-EMs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yx3-dd-w6F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="takePhotoButton" destination="u7v-84-EMs" id="IY7-6s-YZF"/>
+                        <segue destination="klm-R8-S4V" kind="show" identifier="showImageSegue" id="Z0B-Uv-G0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="29"/>
+        </scene>
+        <!--Process View Controller-->
+        <scene sceneID="cVV-8S-HJB">
+            <objects>
+                <viewController id="klm-R8-S4V" customClass="ProcessViewController" customModule="VisionKitHack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="elN-Ra-rd2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HKO-uo-ilQ">
+                                <rect key="frame" x="15" y="40" width="345" height="562"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1d-tW-auX">
+                                <rect key="frame" x="15" y="617" width="39" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <segue destination="psw-19-am2" kind="unwind" unwindAction="exitWithUnwindSegue:" id="qy0-Jd-1Ek"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzb-C8-DER">
+                                <rect key="frame" x="305" y="617" width="55" height="30"/>
+                                <state key="normal" title="Process"/>
+                                <connections>
+                                    <action selector="processImage" destination="klm-R8-S4V" eventType="touchUpInside" id="YjA-py-19T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hzp-bz-BqK" firstAttribute="bottom" secondItem="q1d-tW-auX" secondAttribute="bottom" constant="20" id="8Ko-HS-F5Y"/>
+                            <constraint firstItem="Hzp-bz-BqK" firstAttribute="trailing" secondItem="HKO-uo-ilQ" secondAttribute="trailing" constant="15" id="HSO-1H-tN4"/>
+                            <constraint firstItem="xzb-C8-DER" firstAttribute="top" secondItem="HKO-uo-ilQ" secondAttribute="bottom" constant="15" id="Jmf-W0-wj7"/>
+                            <constraint firstItem="xzb-C8-DER" firstAttribute="trailing" secondItem="HKO-uo-ilQ" secondAttribute="trailing" id="Ofw-8b-oDg"/>
+                            <constraint firstItem="xzb-C8-DER" firstAttribute="centerY" secondItem="q1d-tW-auX" secondAttribute="centerY" id="p8n-PU-Hw4"/>
+                            <constraint firstItem="HKO-uo-ilQ" firstAttribute="leading" secondItem="Hzp-bz-BqK" secondAttribute="leading" constant="15" id="tgY-Rf-O9w"/>
+                            <constraint firstItem="HKO-uo-ilQ" firstAttribute="top" secondItem="Hzp-bz-BqK" secondAttribute="top" constant="20" id="vGm-lc-vDR"/>
+                            <constraint firstItem="q1d-tW-auX" firstAttribute="leading" secondItem="HKO-uo-ilQ" secondAttribute="leading" id="zen-hW-62G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hzp-bz-BqK"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="q1d-tW-auX" id="k6k-GT-oEB"/>
+                        <outlet property="imageView" destination="HKO-uo-ilQ" id="oIB-m8-eNW"/>
+                        <outlet property="processImgButton" destination="xzb-C8-DER" id="Xev-bw-kJY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUZ-kI-ggR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="psw-19-am2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="21"/>
+        </scene>
+    </scenes>
+</document>
