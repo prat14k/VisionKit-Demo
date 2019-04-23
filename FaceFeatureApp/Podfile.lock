@@ -1,0 +1,20 @@
+PODS:
+  - GPUImage (0.1.7)
+  - YUGPUImageHighPassSkinSmoothing (1.4):
+    - GPUImage
+
+DEPENDENCIES:
+  - YUGPUImageHighPassSkinSmoothing
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GPUImage
+    - YUGPUImageHighPassSkinSmoothing
+
+SPEC CHECKSUMS:
+  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  YUGPUImageHighPassSkinSmoothing: d7b396f4505dfca81871c804da560ae71c0e854d
+
+PODFILE CHECKSUM: fdf16f4835b9c3f6985b873c70813f44ddb0476c
+
+COCOAPODS: 1.6.0.beta.2
